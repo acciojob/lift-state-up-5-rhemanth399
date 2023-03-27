@@ -1,21 +1,9 @@
-
-import React from "react";
-import './../styles/App.css';
-import ChildComponent from "./ChildComponent";
-const App = () => {
-  const [isLoggedIn,setIsLoggedIn]=useState(false)
-  let handleLogin=()=>{
-    setIsLoggedIn(true)
-  }
-  return(
+import React from 'react'
+import ParentComponent from './ParentComponent'
+export default function App() {
+  return (
     <div>
-      {
-        isLoggedIn?(<p>You are logged in!</p>):(<ChildComponent handleLogin={handleLogin}/>)
-
-      }
-        
+      <ParentComponent/>
     </div>
   )
 }
-
-export default App
