@@ -1,6 +1,6 @@
 import React from 'react'
 import {useState} from 'react'
-export default function ChildComponent(props) {
+export default function ChildComponent({handleLogin}) {
     
     const [username,setUsername]=useState("")
     const [password,setPassword]=useState("")
@@ -13,7 +13,7 @@ export default function ChildComponent(props) {
     let handleSubmit=(e)=>
     {
       e.preventDefault();
-      props.handleLogin()
+      handleLogin()
       setUsername('')
       setUsername("");
      
@@ -22,10 +22,14 @@ export default function ChildComponent(props) {
       <div>
           
           <form onSubmit={handleSubmit}>
-            <label htmlFor="Username">Username:</label>
-            <input type="text" value={username} onChange={handleUsername}/>
-            <label htmlFor="Password">Password:</label>
-            <input type="password" value={password} onChange={handlePassword}/>
+            <div style={{display:'block'}}>
+            <label htmlFor="Username" >Username:</label>
+            <input type="text" value={username} onChange={handleUsername} />
+            </div>
+            <div>
+            <label htmlFor="Password" style={{display:''}}>Password:</label>
+            <input type="password" value={password} onChange={handlePassword} style={{display:'inline'}}/>
+            </div>
             <button type='submit'>Login</button>
           </form>
       </div>
