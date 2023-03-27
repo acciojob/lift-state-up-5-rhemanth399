@@ -1,11 +1,19 @@
 
 import React from "react";
 import './../styles/App.css';
-
+import ChildComponent from "./ChildComponent";
 const App = () => {
-  return (
+  const [isLoggedIn,setIsLoggedIn]=useState(false)
+  let handleLogin=()=>{
+    setIsLoggedIn(true)
+  }
+  return(
     <div>
-        {/* Do not remove the main div */}
+      {
+        isLoggedIn?(<p>You are logged in!</p>):(<ChildComponent handleLogin={handleLogin}/>)
+
+      }
+        
     </div>
   )
 }
