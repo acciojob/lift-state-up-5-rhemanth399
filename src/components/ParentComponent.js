@@ -10,8 +10,10 @@ const ParentComponent = () => {
   }
   return(
     <div>
+        <h1></h1>
       {
-        isLoggedIn?(<p>You are logged in!</p>):(<ChildComponent handleLogin={handleLogin}/>)
+        isLoggedIn?(<p>You are logged in!</p>):(<div><h1>ParentComponent</h1>
+        <ChildComponent handleLogin={handleLogin}/></div>)
 
       }
         
